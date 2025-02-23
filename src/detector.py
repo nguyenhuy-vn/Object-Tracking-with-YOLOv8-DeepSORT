@@ -18,6 +18,9 @@ class Detector:
 
     self.tracked_objects = self.configs['tracked_objects']
     self.confidence_threshold = self.configs['confidence_threshold']  
+
+    if self.tracked_objects is None:
+      self.tracked_objects = self.classes
     
     # FLAGS
     self.DISP_OBJ_DETECT_BOX = self.configs['disp_obj_detect_box']  
