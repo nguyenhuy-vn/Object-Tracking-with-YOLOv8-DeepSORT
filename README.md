@@ -16,19 +16,20 @@ The module supports two modes:
 │-- 📁 src          # Main source code of the module  
 │-- 📁 utils        # Utility functions for data processing  
 │-- README.md       # Project documentation
-|-- requirements.txt # Necessary packages
+│-- requirements.txt # Necessary packages
 🛠️ Installation
 Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-🎯 Usage
-1️⃣ Live Camera Mode
-To use the live camera mode, modify the configs.yaml file to enable camera input. Once configured, run:
+🎯 **Usage**  
+
+1️⃣ **Live Camera Mode**  
+To use the live camera mode, modify the `configs.yaml` file to enable camera input. Once configured, run:
 ```bash
 python test.py
 ```
-2️⃣ Input Video Mode
+2️⃣ **Input Video Mode**
 Run the module with a video file:
 1. Place your video file in the data/ folder
 2. Update the video path in configs.yaml (located in the configs/ folder).
