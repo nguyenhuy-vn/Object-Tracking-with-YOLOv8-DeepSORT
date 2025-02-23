@@ -1,0 +1,30 @@
+# Data input configuration
+data_source: "video file"         # Data source: video file
+webcam_id: 0                       # Webcam ID (if used)
+data_path: "data/cars.mp4"     # Path to the source video
+
+# Model configuration
+model_name: "model/yolov8n.pt"    # Path to the YOLO model
+confidence_threshold: 0.6   # Confidence threshold for filtering detections
+
+# Display options
+disp_obj_detect_box: false                # Display bounding boxes for detected objects
+disp_fps: True                            # Display FPS
+disp_video: True                          # Display the video while processing
+save_video: True                          # Save the processed video
+save_path: "output"                       # Path to save the output video
+window_name: "Video"                      # Name of the video display window
+
+# Tracking configuration
+max_age: 30                               # Maximum lifespan of a track (in frames)
+n_init: 6                                 # Initial number of frames for tracking
+nms_max_overlap: 1.0                      # Maximum overlap threshold for Non-Maximum Suppression (NMS)
+max_cosine_distance: 0.4                  # Cosine distance threshold for comparing object features
+
+# Tracked object classes
+tracked_objects:
+  - car
+
+# Additional display options
+disp_counter: false                       # Display object counter
+disp_obj_track_box: True                  # Display tracking bounding boxes
