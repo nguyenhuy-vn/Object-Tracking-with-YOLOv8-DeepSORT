@@ -1,11 +1,13 @@
 # Object-Tracking-with-YOLOv8-DeepSORT
 🚀Overview
-This module combines YOLOv8 (for object detection) and DeepSORT (for object tracking), designed for:
-  Production line tracking to monitor products moving on a conveyor belt.
-  Traffic monitoring to count the number of cars passing through a path.
-The module supports two modes:
-  Live Camera Mode – Track objects in real time using a webcam or external camera.
-  Input Video Mode – Process and analyze pre-recorded videos.
+This module combines YOLOv8 (for object detection) and DeepSORT (for object tracking), designed for:  
+- **Production line tracking** to monitor products moving on a conveyor belt.  
+- **Traffic monitoring** to count the number of cars passing through a path.  
+
+The module supports two modes:  
+- **Live Camera Mode** – Track objects in real time using a webcam or external camera.  
+- **Input Video Mode** – Process and analyze pre-recorded videos.  
+
 📦 Project  
 │-- 📁 configs      # Configure parameters (model, tracking, input, output, etc.)  
 │-- 📁 data         # Store input videos  
