@@ -40,6 +40,6 @@ python test.py
 ```
 🎯 **Target Selection**
 You can specify which objects to track in the configs.yaml file:
-![image](https://github.com/user-attachments/assets/30c45f71-cd24-4542-9610-e0cc57013346)
+![image](https://github.com/user-attachments/assets/5ec0e975-9b6a-4f98-bcf3-6c2a9210d603)
 
 By default, the module tracks all objects that the model can detect.
