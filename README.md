@@ -8,16 +8,17 @@ The module supports two modes:
 - **Live Camera Mode** – Track objects in real time using a webcam or external camera.  
 - **Input Video Mode** – Process and analyze pre-recorded videos.  
 
-📦 Project  
+📦 **Project**  
 │-- 📁 configs      # Configure parameters (model, tracking, input, output, etc.)  
 │-- 📁 data         # Store input videos  
 │-- 📁 output       # Save result videos after tracking  
 │-- 📁 model        # Contain YOLOv8 and DeepSORT models  
 │-- 📁 src          # Main source code of the module  
-│-- 📁 utils        # Utility functions for data processing  
-│-- README.md       # Project documentation
+│-- 📁 utils        # Utility functions for data processing
 │-- requirements.txt # Necessary packages
-🛠️ Installation
+│-- README.md       # Project documentation
+
+🛠️ **Installation**
 Install the required dependencies:
 ```bash
 pip install -r requirements.txt
@@ -37,7 +38,7 @@ Run the module with a video file:
 ```bash
 python test.py
 ```
-🎯 Target Selection
+🎯 **Target Selection**
 You can specify which objects to track in the configs.yaml file:
 
 By default, the module tracks all objects that the model can detect.
