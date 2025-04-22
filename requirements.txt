@@ -1,2 +1,3 @@
 ultralytics
 numpy
+deep_sort_realtime
