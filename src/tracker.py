@@ -31,10 +31,14 @@ class DeepSortTracker:
     
   def display_track(self, tracks, frame):
     height, width, _ = frame.shape
-    threshold_y = int(height * 5 / 12)  # Define the threshold line at 5/12 of the frame height
 
-    # Draw the threshold line on the frame
-    cv2.line(frame, (0, threshold_y), (width, threshold_y), (0, 255, 255), 2)  
+    # Define threshold zone for updating the counter
+    y_min_threshold = int(height * 4 / 12)
+    y_max_threshold = int(height * 8 / 12)
+
+    # Draw threshold lines on the frame
+    cv2.line(frame, (0, y_min_threshold), (width, y_min_threshold), (0, 255, 255), 2)
+    cv2.line(frame, (0, y_max_threshold), (width, y_max_threshold), (0, 255, 255), 2)
 
     for track in tracks:
         if not track.is_confirmed():
@@ -45,16 +49,19 @@ class DeepSortTracker:
         object_name = self.classes[int(class_id)]
 
         bbox = track.to_tlbr().astype(int)  # Convert bounding box to integer coordinates
-        object_y = bbox[3]  # Get the y-coordinate of the bottom of the bounding box
+        y_center = (bbox[1] + bbox[3]) // 2  # Calculate the average y-coordinate (center)
 
-        # Update the counter only when the object crosses the threshold from above
-        if track_id not in self.tracked_ids and object_y > threshold_y:
+        # Count the object if it hasn't been counted and is within the threshold zone
+        if (
+            track_id not in self.tracked_ids
+            and y_min_threshold <= y_center <= y_max_threshold
+        ):
             self.prev_object_name = self.current_object_name
             self.current_object_name = object_name
             self.tracked_ids.add(track_id)
-            self.update_counter(object_name)  # Increment the counter
+            self.update_counter(object_name)
 
-        # Draw the tracking box if enabled
+        # Draw the tracking box if the option is enabled
         if self.DISP_OBJ_TRACK_BOX:
             self.plot_box_tracking(frame, bbox, object_name)
 
